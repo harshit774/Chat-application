@@ -13,9 +13,9 @@ app.use(router);
 io.on('connection', socket => {
     console.log("New User entered");
 
-    socket.on('join', ({ name, room })=>{
+    socket.on('join', ({ name, room }, callback)=>{
         console.log(name,room);
-    })
+    });
     socket.on('disconnect', ()=>{
         console.log("User had left");
     })
