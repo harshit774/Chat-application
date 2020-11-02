@@ -5,6 +5,7 @@ const router = require('./route');
 const PORT = process.env.PORT || 5000;
 const app = express();
 const server = http.createServer(app);
+const { addUser, removeUser, getUser, userRoom } = require('./users');
 const io = socketio(server);
 app.use(router);
 
