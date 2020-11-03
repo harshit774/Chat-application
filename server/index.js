@@ -16,7 +16,6 @@ io.on('connection', socket => {
         const { error, user } = addUser({ id: socket.id, name, room });
         if(error) return callback(error);
         socket.emit('message', { user: 'admin', text: `Welcome ${user.name} to the room ${user.room}`}); 
-
         /*
         Broadcasting method - Sets the 'broadcast' flag when emitting an event. Broadcasting an event will send it to all the other sockets in the namespace except for yourself
         */
