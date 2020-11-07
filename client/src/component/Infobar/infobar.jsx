@@ -1,16 +1,15 @@
 import React from 'react';
-import closeIcon from '../Icons/close.png';
-import onlineIcon from '../Icons/online.png';
+import MaterialIcon from 'material-icons-react';
 import './infobar.css';
 
 const Infobar = ({ room })=> (
 <div className="infobar">
  <div className="leftContainer">
-  <img className="onlineIcon" src={onlineIcon} />
+  <MaterialIcon icon="fiber_manual_record" color="#32CD32" />
   <h3>{ room }</h3>
  </div>
  <div className="rightContainer">
-  <a href="/"><img className="closeIcon" src={closeIcon} /></a>
+  <a href="/"><MaterialIcon icon="close" color="#fff"/></a>
  </div>
 </div>
 )

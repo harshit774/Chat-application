@@ -14,7 +14,7 @@ const Message = ({message: { user, text }, name}) => {
   (
    <div className="messageContainer justifyEnd">
     <p className="sendText pr-10">{trimUser} </p>
-    <div className="box backgroundBlue">
+    <div className="box backgroundViolet">
      <p className="messageText colorWhite">{ReactEmoji.emojify(text)}</p>
     </div>
    </div>
