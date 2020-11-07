@@ -22,12 +22,14 @@ io.on('connection', socket => {
         socket.broadcast.to(user.room).emit('message', {user: 'admin', text: `${user.name} has joined`});
 
         socket.join(user.room);
+        io.to(user.room).emit('roomData', {room: user.room, users: userRoom(user.room)})
         callback();
     }); 
     // user generated message
     socket.on('sendMessage', (message, callback) => {
-        const member = getUser(socket.id);
-        io.to(member.room).emit('message', { user: member.name, text: message});
+        const user = getUser(socket.id);
+        io.to(user.room).emit('message', { user: user.name, text: message});
+        io.to(user.room).emit('roomData', { room: user.room, users: userRoom(user.room)})
         callback();
     });
     socket.on('disconnect', ()=>{
