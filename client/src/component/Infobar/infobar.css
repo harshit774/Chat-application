@@ -2,7 +2,8 @@
  display: flex;
  align-items: center;
  justify-content: space-between;
- background: hsl(266, 100%, 58%);
+ /* background: hsl(266, 100%, 58%); */
+ background: #5A5EB9;
  border-radius: 4px 4px 0 0;
  height: 60px;
  width: 100%;
