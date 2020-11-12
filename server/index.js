@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 const http = require("http");
 const express = require("express");
 const socketio = require("socket.io");
 const cors = require("cors");
 const router = require("./route");
+=======
+const http = require('http');
+const express = require('express');
+const socketio = require('socket.io');
+const cors = require('cors');
+const router = require('./route');
+>>>>>>> 804c7c425b395905cd059e7b757daca8c3bd61bd
 const PORT = process.env.PORT || 5000;
 const app = express();
 const server = http.createServer(app);
@@ -10,6 +18,10 @@ const { addUser, removeUser, getUser, userRoom } = require("./users");
 const io = socketio(server);
 app.use(router);
 app.use(cors());
+<<<<<<< HEAD
+=======
+
+>>>>>>> 804c7c425b395905cd059e7b757daca8c3bd61bd
 
 //Socket.io conection and disconnection
 io.on("connection", (socket) => {
@@ -59,4 +71,8 @@ io.on("connection", (socket) => {
 
 // server.listen( PORT, () => console.log(`Server is running on port`));
 
+<<<<<<< HEAD
 server.listen(PORT);
+=======
+server.listen( PORT, () => console.log(`Server is running on port`));
+>>>>>>> 804c7c425b395905cd059e7b757daca8c3bd61bd
